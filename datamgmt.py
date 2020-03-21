@@ -465,18 +465,6 @@ def dummy_data(record_length=10,row_length=200,max_val=1000):
     data2 = [[get_random_number(max_val) for y in x] for x in data]
     return data2
 
-
-def logit(x):
-    "Used for logging info to zzzz_joeutils_log"
-    try:
-        outfile = open('zzzz_joeutils_log.txt','a')
-    except:
-        outfile = open('zzzz_joeutils_log.txt','w')
-
-    outfile.write("{ts} - {x}\n".format(ts=dtnow(),x=x))
-    outfile.close()
-    return
-
 def time_24_to_ampm(x):
     '''
     Converts 24-hour times HH:MM:SS to AM/PM format
