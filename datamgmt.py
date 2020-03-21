@@ -1,5 +1,5 @@
-# Joe Utilities
-# A bunch of small useful functions that are used a lot.
+# Python Data Management
+
 
 import datetime
 import os
