@@ -133,6 +133,10 @@ def readfile(file,start=0,limit=0):
 
 
 def splitdata(data,delim='\t',progress=1):
+    '''
+    Splits raw data from text file by the specified delimiter. Delimiter
+    defaults to tab. Uses the csv module for splitting data.
+    '''
 
     newdata = []
 
@@ -205,8 +209,6 @@ def file_to_db(file='',dsn='',table='',delim='\t',batchsize=100,
         return 'No file found with name: {f}'.format(f=file)
 
     filename = filename[0]
-
-
 
     if table == '':
         table = 'IMPORT_TABLE_{rn}'.format(rn=random.randint(1,9999999))
@@ -502,7 +504,6 @@ def read_excel(f="",sh="",rowstart=0,progress=0,mmddyyyy=0,ddmmyyyy=0,timeoption
     ddmmyyyy.......Converts dates to DD/MM/YYYY format
     time...........Include time HH:MM:SS in the date fields
     """
-    import xlrd # Module for reading Excel workbooks
 
     if f == "":
         print("read_excel: No file specied")
