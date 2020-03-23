@@ -332,6 +332,16 @@ def get_file_line_count(f):
         return 0
 
 
+
+def file_header(f,n=10):
+    infile = open(f,'r')
+    data = []
+    for x in range(n):
+        line = infile.readline().replace('\n','')
+        data.append(line)
+    return data
+
+
 def write_csv(filename,filedata,delim=','):
     '''
     Writes a CSV file from a dataset (list of lists)

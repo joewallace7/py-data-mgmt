@@ -22,3 +22,6 @@ Here's some of the useful functions you'll find in datamgmt.py:
 * **int2(x)**: Tries to convert "x" to an integer. If it can't it just returns the original value.
 * **div2(n,d)**: Try to divide n/d. Accounts for possible errors, such as division by zero. If failure occurs, returns None.
 * **get_uuid()**: Returns a unique identifier
+* **hash_value(x)**: Returns the SHA256 hash of "x"
+* **get_file_line_count(x)**: Returns the number of lines in file "x"
+* **file_header(x,n=10)**: Returns the top n lines from file "x"
