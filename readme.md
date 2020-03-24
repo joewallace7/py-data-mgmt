@@ -18,7 +18,7 @@ Other capabilities include:
 * Getting file line counts.
 * Getting the top N lines of a file.
 * Appending files together.
-
+* Search a file and return any line with specific text.
 
 ## Dependencies
 
