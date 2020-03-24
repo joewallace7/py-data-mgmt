@@ -67,3 +67,36 @@ clean_colnames=0,    # Remove any special characters from the column names and r
 skip_file_length=0   # Do not attempt to find the number of lines in the file first, and instead process file immediately.
 )
 </pre>
+
+
+## Querying a Database and Sending the Results to a File
+
+Using the **querydb()** function, you can send a SQL query to a database and return the results to a delimited file. You can either set the SQL directly using the **sql** argument or have it read a SQL script using the **script** argument.
+
+**Example: Build a SQL script and run**
+<pre>
+sql_code = "SELECT * FROM myTable"
+querydb(sql=sql_code,dsn='my_connection',results='my_results.txt')
+</pre>
+
+**Example: Read a SQL script and run**
+`querydb(script='SQL_script.sql',dsn='my_connection',results='my_results.txt')`
+
+
+**The querydb() signature:**
+<pre>
+querydb(
+sql='',            # The SQL code to run
+script='',         # A SQL script file to run
+dsn='',            # ODBC DSN name
+file='--',         # Output file. If left as "--" the results will be put into a file results_[current_timestamp].txt
+batchsize=100,     # The number of records to download at a time
+delim='\t',        # Delimiter for the output file.
+nofetch=0,         # Set to 1 to not fetch results. Useful if running something like an UPDATE query.
+nowrite=0,         # Do not write results to file, instead return the results as a list of lists
+as_dict=0,         # If nowrite=1 and as_dict=1, the results will be a list of dictionaries including the column headers.
+sqlserver=0        # Set to 1 to have SQLServer use the MultiSubnetFailover=Yes option, which is sometimes needed to work.
+)
+</pre>
+
+
