@@ -38,3 +38,32 @@ Here's some of the useful functions you'll find in datamgmt.py:
 * **hash_value(x)**: Returns the SHA256 hash of "x"
 * **get_file_line_count(x)**: Returns the number of lines in file "x"
 * **file_header(x,n=10)**: Returns the top n lines from file "x"
+
+
+## Sending a Delimited Data File to a Database Table
+
+Using the **file_to_db** function, you can easily send even very large files to a database. By default, it will set all columns to varchar(250) to ensure no conflicts of data types. It will attempt to insert 100 rows at a time, but you can change this with the batchsize parameter. If you want to drop an existing table and replace it with the data from the file, use the drop_table=1 option. Otherwise if the table exists, it will append the data to that table.
+
+**Example 1: Sending mydata.csv to the table my_table**
+
+`file_to_db('mydata.csv',delim=',',dsn='my_odbc_connection',table='my_table')`
+
+**Example 2: Sending mydata.csv to the table my_table, but making sure to drop the table first and reducing to only running 50 rows at a time**
+
+`file_to_db('mydata.csv',delim=',',dsn='my_odbc_connection',table='my_table',batchsize=50,drop_table=1)`
+
+**The file_to_db() signature:**
+<pre>
+file_to_db(
+file='',             # The file to process
+dsn='',              # The ODBC DSN connection name
+table='',            # The table name to send the data
+delim='\t',          # The delimiter for the file
+batchsize=100,       # The number of records to process at at time.
+drop_table=0,        # Attempt to drop the table first, then create table.
+ignore_errors=0,     # If an error occurs, ignore and keep processing the file
+colwidth=250,        # Column width (all columns will be varchar). Can increase if data is wider than 250.
+clean_colnames=0,    # Remove any special characters from the column names and replace spaces with underscores
+skip_file_length=0   # Do not attempt to find the number of lines in the file first, and instead process file immediately.
+)
+</pre>
