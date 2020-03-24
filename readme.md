@@ -17,6 +17,7 @@ Other capabilities include:
 * Generating UUIDs.
 * Getting file line counts.
 * Getting the top N lines of a file.
+* Appending files together.
 
 
 ## Dependencies
