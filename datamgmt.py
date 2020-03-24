@@ -100,6 +100,30 @@ def trim(x,chars=''):
     return s
 
 
+def avg(*args):
+    '''Simple Average Function'''
+    total = 0
+    for x in args:
+        total+=x
+    return total*1.0/len(args)
+
+
+def append_files(files=[],results='appended_files.txt',suppress_output=0):
+    '''Appends files together'''
+    if files == []:
+        return
+    outfile=open(results,'w')
+    for f in files:
+        if suppress_output == 0:
+            print(f)
+        infile = open(f,'r')
+        for line in infile:
+            outfile.write(line)
+        infile.close()
+    outfile.close()
+    return
+
+
 def readfile(file,start=0,limit=0):
     filename = find_files(file)
 
