@@ -1,10 +1,23 @@
 # Python Data Management Tools
 
-Use the file datamgmt.py
+**File:** datamgmt.py
 
 ## Purpose
+
 This is a single Python script with a collection of functions meant to make data management, particularly
-extracting and importing data to/from databases easier.
+extracting and importing data to/from databases easier. You'll need to have ODBC connections
+already set up to use the file_to_db() and querydb() functions.
+
+Other capabilities include:
+
+* Reading and writing delimited text files (CSV, TSV, pipe-delimted, etc).
+* Finding files by part of the name.
+* Reading Excel spreadsheets.
+* Cleaning strings of non-standard characters.
+* Generating UUIDs.
+* Getting file line counts.
+* Getting the top N lines of a file.
+
 
 ## Dependencies
 
