@@ -21,8 +21,8 @@ Other capabilities include:
 
 ## Dependencies
 
-* pypyodbc: for ODBC connections
-* xlrd: Reading Excel files
+* pypyodbc: for ODBC connections (https://pypi.org/project/pypyodbc/)
+* xlrd: Reading Excel files (https://pypi.org/project/xlrd/)
 
 ## Functions
 
