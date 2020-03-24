@@ -2,6 +2,8 @@
 
 **File:** datamgmt.py
 
+**This software is *NOT* meant to be a database abstraction tool. It is assumed the user is comfortable using SQL for querying databases.**
+
 ## Purpose
 
 This is a single Python script with a collection of functions meant to make data management, particularly
