@@ -124,6 +124,26 @@ def append_files(files=[],results='appended_files.txt',suppress_output=0):
     return
 
 
+def file_search(f,txt,results=''):
+    txt=str(txt)
+    if results == '':
+        results='file_search_results_{ts}.txt'.format(ts=dtnow(1))
+    outfile = open(results,'w')
+    infile = open(f,'r')
+    counter = 1
+    for line in infile:
+        if counter == 1:
+            outfile.write(line)
+            counter+=1
+            continue
+        if line.upper().find(txt.upper()) > -1:
+            outfile.write(line)
+        counter+=1
+    outfile.close()
+
+
+
+
 def readfile(file,start=0,limit=0):
     filename = find_files(file)
 
