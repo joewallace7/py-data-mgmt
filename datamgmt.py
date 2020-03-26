@@ -8,6 +8,7 @@ import pypyodbc
 import csv
 import string
 import xlrd
+from extlibs import *
 
 def cp(x):
     '''Copy mutable variable types so you can make them independant'''
