@@ -1,5 +1,6 @@
 # Python Data Management
-
+# A collection of useful data management functions
+# Author: Joe Wallace
 
 import datetime
 import os
@@ -7,6 +8,7 @@ import gc
 import csv
 import string
 
+# Non-standard Python dependencies
 import pypyodbc
 import xlrd
 
