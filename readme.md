@@ -4,6 +4,8 @@
 
 **This software is *NOT* meant to be a database abstraction tool. It is assumed the user is comfortable using SQL for querying databases.**
 
+Drop the datamgmt.py into your Python system path to install.
+
 ## Purpose
 
 This is a single Python script with a collection of functions meant to make data management, particularly
